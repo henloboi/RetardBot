@@ -40,7 +40,7 @@ jobs:
            USERKEY: ${{ secrets.USERKEY }}
            SFUN: ${{ secrets.SFUN }}
            SFPW: ${{ secrets.SFPW }}
-           PROJECT: $PROJECTS
+           PROJECT: gsidev
 
          run: |
               cd bruh/bruh
