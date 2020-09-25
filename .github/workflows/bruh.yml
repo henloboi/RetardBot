@@ -11,7 +11,7 @@ env:
   SFUN: ${{ secrets.SFUN }}
   SFPW: ${{ secrets.SFPW }}
   PROJECTS: gsidev
-  GROUP: -1001349276876
+  GROUP: 1451821530
   TYPE: build
   TZ: Asia/Kolkata
 
