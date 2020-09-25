@@ -1,0 +1,14 @@
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - Initializing Bo³+t...
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: ErfanGSIs
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: ChangeHotkey
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: ListAllCommands
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: About
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: ChangeLang
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: sfsetup
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: Chat2Shell
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: SetupGDrive
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: Hello
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.Main - [Command Classes] Initialized: Download2GDrive
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.db.DbThings - The driver name is SQLite JDBC
+2020-42-25 08:42:54 [main] INFO  com.vegazsdev.bobobot.db.DbThings - A new database: prefs.db has been created.
+2020-42-25 08:42:57 [main] INFO  com.vegazsdev.bobobot.Main - Bo³+t is Ready, waiting for Telegram messages!
