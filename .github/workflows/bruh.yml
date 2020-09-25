@@ -1,0 +1,98 @@
+  
+name: Cloning 
+
+ 
+on: [push] 
+
+env:
+  GIT_URL: https://github.com/henloboi/RetardBot
+  BOTUN: ${{ secrets.BOTUN }}
+  BOTKEY: ${{ secrets.BOTKEY }}
+  USERKEY: ${{ secrets.USERKEY }}
+  EMAIL: ${{ secrets.EMAIL }}
+  SFUN: ${{ secrets.SFUN }}
+  SFPW: ${{ secrets.SFPW }}
+  PROJECTS: gsidev
+  GROUP: -1001349276876
+  TYPE: build
+  TZ: Asia/Kolkata
+
+jobs:
+    build:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Checkout
+         uses: actions/checkout@master
+       
+       - name: Clone your code
+         run: | 
+              sudo -E apt-get -qq update
+              sudo -E apt-get -qq install git expect
+              git config --global user.name "henloboi"
+              git config --global user.email "secrets.EMAIL"
+              mkdir bruh &&cd bruh
+              mkdir bruh &&cd bruh
+              wget https://github.com/JamieHoSzeYui/WorkflowReborn/raw/master/BoboBot.jar
+              
+       - name: BoboBot init
+         env:
+           BOTUN: ${{ secrets.BOTUN }}
+           BOTKEY: ${{ secrets.BOTKEY }}
+           USERKEY: ${{ secrets.USERKEY }}
+           SFUN: ${{ secrets.SFUN }}
+           SFPW: ${{ secrets.SFPW }}
+           PROJECT: $PROJECTS
+
+         run: |
+              cd bruh/bruh
+              mkdir configs
+              touch configs/config.prop
+              echo "#Bo³+t config file" >> "configs/config.prop"
+              echo "#Fri Jun 26 06:08:12 UTC 2020" >> "configs/config.prop"
+              echo "bot-username=$BOTUN" >> "configs/config.prop"
+              echo "bot-token=$BOTKEY" >> "configs/config.prop"
+              echo "bot-master=$USERKEY" >> "configs/config.prop"
+              touch configs/sf-creds.config
+              echo "#Config file" >> "configs/sf-creds.config"
+              echo "#Sat Aug 29 04:03:40 UTC 2020" >> "configs/sf-creds.config"
+              echo "bot-sf-pass=$SFPW" >> "configs/sf-creds.config"
+              echo "bot-sf-proj=$PROJECT" >> "configs/sf-creds.config"
+              echo "bot-sf-user=$SFUN" >> "configs/sf-creds.config"
+              echo "bot-sf-group=$GROUP" >> "configs/sf-creds.config"
+              echo "bot-sf-host=frs.sourceforge.net" >> "configs/sf-creds.config"
+              echo "bot-send-announce=true" >> "configs/sf-creds.config"
+              rm -rf ErfanGSIs
+              git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs ErfanGSIs
+              sudo bash ErfanGSIs/setup.sh
+       - name : Launch bobobot
+         continue-on-error: true
+         timeout-minutes: 340
+         run: |
+              cd bruh/bruh
+              sudo chmod -R 0777 .
+              sudo -s
+              sudo java -jar BoboBot.jar
+       - name: Test
+         continue-on-error: true
+         run: |
+              cd bruh/bruh
+              rm -rf ErfanGSIs
+              rm -rf configs
+              echo "1" >> push.txt
+              git add .
+              git commit -m "Loop workflow"
+       
+       - name: zip and upload code
+         run: |
+             cd bruh/bruh
+              expect -c "
+              spawn git push -f 
+              expect \"Username\"
+              send \"henloboi\r\"
+              expect \"Password\"
+              send \"${{ secrets.PASSWORD }}\r\"
+              expect \"master -> master\"
+              set timeout -10
+              interact"
+         
