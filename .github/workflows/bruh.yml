@@ -1,6 +1,4 @@
-  
 name: Cloning 
-
  
 on: [push] 
 
